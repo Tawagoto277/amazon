@@ -6,14 +6,24 @@ import { Prodotto } from '../models/prodotto';
   providedIn: 'root'
 })
 export class ProdottiService {
-
-  constructor() {  }
+prodottiACarrello: Prodotto[] = [];
 
   getProdotti(){
     return PRODOTTI as Prodotto[] ;
   }
 
-  getCarrello(){
-    
+  aggiungiACarrello(prodotto : Prodotto){
+    if(!this.prodottiACarrello.find( p => p.id == prodotto.id)){
+      this.prodottiACarrello.push(prodotto);
+    }
+  }
+
+  rimuoviDalCarrello(id :number){
+    const p = this.prodottiACarrello.find(p => p.id == id);
+
+    if(p){
+      const i = this.prodottiACarrello.indexOf(p);
+      this.prodottiACarrello.splice(i, 1);
+    }
   }
 }

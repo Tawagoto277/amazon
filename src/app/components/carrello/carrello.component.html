@@ -1,1 +1,15 @@
-<p>carrello works!</p>
+<ul class="list-group" *ngIf="prodottiService.prodottiACarrello.length > 0">
+  <li 
+    class="list-group-item"
+    *ngFor="let p of prodottiService.prodottiACarrello">
+      <button type="button" class="btn btn-danger" (click)="prodottiService.rimuoviDalCarrello(p.id)"> 
+        <i class="bi bi-cart-dash"></i>
+      </button>
+      {{p.title}}
+  </li>
+</ul>
+<div *ngIf="prodottiService.prodottiACarrello.length == 0">
+  <p>
+    Nessun prodotto a carrello.
+  </p>
+</div>
