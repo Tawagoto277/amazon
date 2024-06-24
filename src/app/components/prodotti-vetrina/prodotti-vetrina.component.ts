@@ -16,6 +16,5 @@ export class ProdottiVetrinaComponent implements OnInit{
 
   ngOnInit(): void {
     this.prodotti = this.ps.getProdotti();
-    
   }
 }
