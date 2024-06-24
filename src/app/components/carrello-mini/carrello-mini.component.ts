@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProdottiService } from '../../services/prodotti.service';
 
 @Component({
   selector: 'app-carrello-mini',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class CarrelloMiniComponent {
 
+  constructor(public ps: ProdottiService){
+
+  }
 }
