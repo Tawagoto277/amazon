@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 //import { PRODOTTI } from '../data/prodotti';
 import { Prodotto } from '../models/prodotto';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +12,12 @@ export class ProdottiService {
 
   prodottiACarrello: Prodotto[] = [];
 
-  getProdotti(){
+  getProdotti(): Observable<Prodotto[]>{
     return this.http.get<Prodotto[]>("https://fakestoreapi.com/products");
     //return PRODOTTI as Prodotto[] ;
   }
 
-  getCategories(){
+  getCategories() :Observable<string[]>{
     return this.http.get<string[]>('https://fakestoreapi.com/products/categories');
   }
 
@@ -25,7 +26,7 @@ export class ProdottiService {
       this.prodottiACarrello.push(prodotto);
     }
   }
-
+ 
   rimuoviDalCarrello(id :number){
     const p = this.prodottiACarrello.find(p => p.id == id);
 
