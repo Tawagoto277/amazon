@@ -24,10 +24,10 @@ import { CarrelloMiniComponent } from './components/carrello-mini/carrello-mini.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    //HttpClientModule
   ],
   providers: [
-      //provideHttpClient()
+      provideHttpClient()
     ],
   bootstrap: [AppComponent]
 })
