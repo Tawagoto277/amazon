@@ -10,6 +10,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { RatingComponent } from './components/rating/rating.component';
 import { CarrelloComponent } from './components/carrello/carrello.component';
 import { CarrelloMiniComponent } from './components/carrello-mini/carrello-mini.component';
+import { ContattiComponent } from './components/contatti/contatti.component';
+import { ChiSiamoComponent } from './components/chi-siamo/chi-siamo.component';
+import { ProdottoDetailComponent } from './components/prodotto-detail/prodotto-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { CarrelloMiniComponent } from './components/carrello-mini/carrello-mini.
     HeaderComponent,
     RatingComponent,
     CarrelloComponent,
-    CarrelloMiniComponent
+    CarrelloMiniComponent,
+    ContattiComponent,
+    ChiSiamoComponent,
+    ProdottoDetailComponent
   ],
   imports: [
     BrowserModule,
