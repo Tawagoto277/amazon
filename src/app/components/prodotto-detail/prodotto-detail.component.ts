@@ -11,8 +11,12 @@ import { ActivatedRoute } from '@angular/router';
 export class ProdottoDetailComponent implements OnInit{
   prodotto? : Prodotto;
 
-  constructor(private ps : ProdottiService, private route : ActivatedRoute){ }
+  constructor(private ps : ProdottiService, private route : ActivatedRoute){  }
 
+  addToCart(){
+    this.ps.aggiungiACarrello(this.prodotto!);
+  }
+  
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')!;
     
