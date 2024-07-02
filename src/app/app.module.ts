@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, provideHttpClient } from "@angular/common/http"
+import { FormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { ChiSiamoComponent } from './components/chi-siamo/chi-siamo.component';
 import { ProdottoDetailComponent } from './components/prodotto-detail/prodotto-detail.component';
 import { PostsListComponent } from './components/posts-list/posts-list.component';
 import { PostDetailComponent } from './components/posts-list/post-detail/post-detail.component';
+import { PostAddComponent } from './components/post-add/post-add.component';
 
 @NgModule({
   declarations: [
@@ -29,11 +31,13 @@ import { PostDetailComponent } from './components/posts-list/post-detail/post-de
     ChiSiamoComponent,
     ProdottoDetailComponent,
     PostsListComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    PostAddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     //HttpClientModule
   ],
   providers: [

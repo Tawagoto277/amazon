@@ -1,0 +1,17 @@
+<h1>Nuovo Articolo</h1>
+<form action="">
+  <div class="mb-3">
+    <label for="title" class="form-label">Titolo</label>
+    <input type="text" name="title" id="title" class="form-control" placeholder="Titolo" 
+      [(ngModel)]="model.title">
+  </div>
+  <div class="mb-3">
+    <label for="body" class="form-label">Testo</label>
+    <textarea name="body" id="body" class="form-control" placeholder="body" rows="5"
+      [(ngModel)]="model.body"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="aggiungiPost()">Salva</button>
+</form>
+<pre>
+  {{model | json}}
+</pre>

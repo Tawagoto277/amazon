@@ -6,6 +6,7 @@ import { ChiSiamoComponent } from './components/chi-siamo/chi-siamo.component';
 import { ProdottoDetailComponent } from './components/prodotto-detail/prodotto-detail.component';
 import { PostsListComponent } from './components/posts-list/posts-list.component';
 import { PostDetailComponent } from './components/posts-list/post-detail/post-detail.component';
+import { PostAddComponent } from './components/post-add/post-add.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,9 @@ const routes: Routes = [
   },
   {
     path : 'articoli', component : PostsListComponent
+  },
+  {
+    path : 'articoli/nuovo', component : PostAddComponent
   },
   {
     path : 'articoli/articolo/:postId', component : PostDetailComponent
