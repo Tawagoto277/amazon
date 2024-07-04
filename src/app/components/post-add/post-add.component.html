@@ -1,17 +1,51 @@
-<h1>Nuovo Articolo</h1>
-<form action="">
+<h1 #titolo class="pippo">Nuovo Articolo</h1>
+<!-- Template Reference Variabile -->
+<form (ngSubmit)="aggiungiPost()" #laForm="ngForm">
   <div class="mb-3">
     <label for="title" class="form-label">Titolo</label>
-    <input type="text" name="title" id="title" class="form-control" placeholder="Titolo" 
-      [(ngModel)]="model.title">
+    <!-- Angular form input status -->
+    <input 
+      type="text"
+      id="title" 
+      name="title" 
+      #inputTitle="ngModel" 
+      class="form-control" 
+      [(ngModel)]="model.title" 
+      [ngClass]="{
+        'is-invalid':inputTitle.invalid && inputTitle.dirty, 
+        'is-valid' : inputTitle.valid && inputTitle.dirty
+        }"
+      pattern="T.+"
+      placeholder="Titolo..." 
+      required>
+    <div class="invalid-feedback p-2" *ngIf="inputTitle.invalid">
+      Titolo non valido (obbligatori deve cominciare con T)
+    </div>
   </div>
   <div class="mb-3">
     <label for="body" class="form-label">Testo</label>
-    <textarea name="body" id="body" class="form-control" placeholder="body" rows="5"
-      [(ngModel)]="model.body"></textarea>
+    <textarea 
+      id="body" 
+      name="body" 
+      #textBody="ngModel" 
+      [(ngModel)]="model.body" 
+      [ngClass]="{
+        'is-invalid' : textBody.invalid && textBody.dirty, 
+        'is-valid' : textBody.valid && textBody.dirty
+        }"
+      class="form-control" 
+      placeholder="Qualunque cosa tu voglia dirci..." 
+      rows="5"
+      required>
+    </textarea>
+    <div class="invalid-feedback p-2" *ngIf="textBody.invalid">
+      testo non valido
+    </div>
   </div>
-  <button type="submit" class="btn btn-primary" (click)="aggiungiPost()">Salva</button>
+  <button type="submit" class="btn btn-primary" [disabled]="!laForm.valid">Salva</button>
 </form>
+
 <pre>
   {{model | json}}
+  {{laForm.valid}}
 </pre>
